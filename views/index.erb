@@ -1,0 +1,8 @@
+<% @recipes.each_with_index do |recipe, index| %>
+  <li>
+    <% x = recipe.completed? ? "X" : " " %>
+    <%= "#{index + 1}: [#{x}] #{recipe.name}, #{recipe.prep_time}" %>
+    <a href="/delete/<%=index%>">Delete this recipe</a>
+    <a href="/update/<%=index%>">Mark this recipe as read or unread</a>
+  </li>
+<% end %>
